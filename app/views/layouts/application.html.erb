@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WatchingTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= nav_bar brand: "Series Tracker", brand_link: root_url do%>
+      <%= menu_group do %>
+        <%=menu_item "Inserir nova Série", new_general_path%>
+      <% end %>
+    <%= form_tag search_general_path, method: :get, class:"navbar-form navbar-right" do %>
+      <div class="form-group">
+          <%= text_field_tag :nome, @name, class: "form-control" %>
+          <%= button_to "Search", nil, class:"betn betn-default"%>
+      </div>
+    <% end %>
+
+    <%end%>
+    <div class="container">
+       <%= yield %>
+    </div>
+  </body>
+</html>

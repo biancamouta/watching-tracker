@@ -1,0 +1,59 @@
+<%@produto.erros.full_messages.each |mensagem| %>
+    <div class="alert alert-danger" role="alert">
+        <%mensagem%>
+       </div> 
+<%end%>
+
+
+<%= form_for @general do |form| %> 
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= form.label :name %>
+                <%= form.text_field :name, class:"form-control" %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= form.label :status %>
+                <%= form.select(:status, [['Em andamento', "in_progress"], ['Finalizada', "done"], ['Cancelada', "cancelled"]]) %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= form.label :season %>
+                <%= form.number_field :season, class:"form-control" %>  
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= form.label :episode %>
+                <%= form.number_field :episode, class:"form-control" %>  
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= form.label :next_episode_at %>
+                <%= form.date_field :next_episode_at, class:"form-control" %>  
+            </div>
+        </div>
+    </div>
+
+    <%= form.submit "Criar", class:"btn-primary"%>
+
+<%end%>
+
+
+
