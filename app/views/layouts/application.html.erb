@@ -13,6 +13,7 @@
     <%= nav_bar brand: "Series Tracker", brand_link: root_url do%>
       <%= menu_group do %>
         <%=menu_item "Inserir nova Série", new_general_path%>
+        <%=menu_item "Por Status", status_general_path%>
       <% end %>
     <%= form_tag search_general_path, method: :get, class:"navbar-form navbar-right" do %>
       <div class="form-group">

@@ -1,4 +1,4 @@
-<%@produto.erros.full_messages.each |mensagem| %>
+<%@general.errors.full_messages.each do |mensagem| %>
     <div class="alert alert-danger" role="alert">
         <%mensagem%>
        </div> 
@@ -7,7 +7,7 @@
 
 <%= form_for @general do |form| %> 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6"> 
             <div class="form-group">
                 <%= form.label :name %>
                 <%= form.text_field :name, class:"form-control" %>
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <%= form.submit "Criar", class:"btn-primary"%>
+    <%= form.submit "Criar", class:"btn-primary" %>
 
 <%end%>
 
