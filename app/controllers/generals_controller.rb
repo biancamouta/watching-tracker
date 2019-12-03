@@ -1,7 +1,9 @@
 class GeneralsController < ApplicationController
+
+    before_action :set_produto, only: [:edit, :update, :destroy]
+
     def index
         @generals = General.order :name
-        @nexts = General.order :next_episode_at
     end
 
     def general_params
@@ -13,9 +15,8 @@ class GeneralsController < ApplicationController
     end
 
     def create
-        #requisicao dos valores que ficam na url
-        @general = General.new general
-        if @general.save
+        @generals = General.new general
+        if @generals.save
             flash[:notice] = "Saved!"
             redirect_to root_url
         else
@@ -24,8 +25,7 @@ class GeneralsController < ApplicationController
     end
 
     def destroy
-        id = params[:id]
-        General.destroy id
+        @generals.destroy id 
         redirect_to root_url
     end
 
@@ -40,20 +40,22 @@ class GeneralsController < ApplicationController
     end
 
     def edit
-        id = params[:id]
-        @general = General.find(id)  #usa o @ pq precisa exibir na hora da edicao
-        render :new
+        render :edit
     end
 
     def update
-        id = params[:id]
-        @general = General.find(id)
         if @general.update general_params
             flash[:notice] = "Serie Atualizada"
             redirect_to root_url
         else
             render :new
         end
+    end
+
+    private
+
+    def set_produto
+        @general = General.find (params[:id])
     end
 
 end

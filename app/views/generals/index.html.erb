@@ -16,17 +16,7 @@
         </tr>
     </thead>
     <tbody>
-    <% @generals.each do |general| %>
-        <tr>
-            <td><%= general.name %></td>
-            <td><%= general.status_name %></td>
-            <td><%= general.season %></td>
-            <td><%= general.episode %></td>
-            <td><%= general.next_episode_at %></td>
-            <td><%= link_to "Alterar", edit_general_path(general), class: "btn btn-default" %></td>
-            <td><%= button_to "Remover", general, method: :delete, class: "btn btn-danger", data: {confirm: "Are You Sure?"}%></td>
-        </tr>
-    <% end %>
+        <%= render @generals %>
     </tbody>
 </table>
 

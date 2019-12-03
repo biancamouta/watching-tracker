@@ -6,19 +6,11 @@
             <th>Temporada</th>
             <th>Episodio</th>
             <th>Proximo Episodio</th>
-            <td colspan="1">
+            <td colspan="2">
         </tr>
     </thead>
     <tbody>
-    <% @generals.each do |general| %>
-        <tr>
-            <td><%= general.name %></td>
-            <td><%= general.status %></td>
-            <td><%= general.season %></td>
-            <td><%= general.episode %></td>
-            <td><%= general.next_episode_at %></td>
-            <td><%= button_to "Remover", general, method: :delete, class: "btn btn-danger", data: {confirm: "Are You Sure?"}%></td>
-        </tr>
+        <%= render @generals %>
     <% end %>
     </tbody>
 </table>
