@@ -16,7 +16,7 @@
         <% if (general.status == "in_progress") %>
         <tr>
             <td><%= general.name %></td>
-            <td><%= general.status_name %></td>  
+            <td><%= general.status %></td>  
             <td><%= general.season %></td>
             <td><%= general.episode %></td>
             <td><%= general.next_episode_at %></td>
@@ -46,7 +46,7 @@
         <% if (general.status == "cancelled") %>
         <tr>
             <td><%= general.name %></td>
-            <td><%= general.status_name %></td>  
+            <td><%= general.status %></td>  
             <td><%= general.season %></td>
             <td><%= general.episode %></td>
             <td><%= general.next_episode_at %></td>

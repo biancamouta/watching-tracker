@@ -2,12 +2,24 @@ class GeneralsController < ApplicationController
 
     before_action :set_produto, only: [:edit, :update, :destroy]
 
+
+    def status_name 
+        if status=="cancelled"
+            "Cancelada"
+        elsif status=="in_progress"
+            "Em Andamento"
+        else status=="done"
+            "Finalizada"
+
+        end
+    end 
+
     def index
         @generals = General.order :name
     end
 
     def general_params
-        params.require(:general).permit(:name, :status, :season, :episode, :next_episode_at) 
+        params.require(:general).permit( :name, :status, :season, :episode, :next_episode_at) 
     end
 
     def new
@@ -15,7 +27,7 @@ class GeneralsController < ApplicationController
     end
 
     def create
-        @generals = General.new general
+        @generals = General.new general_params
         if @generals.save
             flash[:notice] = "Saved!"
             redirect_to root_url
@@ -25,7 +37,7 @@ class GeneralsController < ApplicationController
     end
 
     def destroy
-        @generals.destroy id 
+        @general.destroy
         redirect_to root_url
     end
 
@@ -57,5 +69,6 @@ class GeneralsController < ApplicationController
     def set_produto
         @general = General.find (params[:id])
     end
+
 
 end

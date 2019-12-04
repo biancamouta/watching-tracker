@@ -1,4 +1,5 @@
 class General < ApplicationRecord
+  
     validates :name, length: {minimum: 4}
     validates :status, presence: true
 
