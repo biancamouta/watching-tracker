@@ -1,21 +1,21 @@
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Em andamento</h4>
+<div class="box2", style="font-color: black">
+    <h3><b>Em Andamento</b></h3>
 </div>
         <table class = "table table-bordered table-table-hover">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Status Geral</th>
-            <th>Temporada</th>
-            <th>Episodio</th>
-            <th>Proximo Episodio</th>
+            <th><h4><b>Nome</b></h4></th>
+            <th><h4><b>Status Geral</b></h4></th>
+            <th><h4><b>Temporada</b></h4></th>
+            <th><h4><b>Episodio</b></h4></th>
+            <th><h4><b>Proximo Episodio</b></h4></th>
         </tr>
     </thead>
     <tbody>
         <% @generals.each do |general| %>
         <% if (general.status == "in_progress") %>
         <tr>
-            <td><%= general.name %></td>
+            <td><b><%= general.name %></b></td>
             <td><%= general.status %></td>  
             <td><%= general.season %></td>
             <td><%= general.episode %></td>
@@ -27,17 +27,17 @@
 </div>
 </table>
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Canceladas</h4>
+<div class="box2", style="font-color: black">
+    <h3><b>Canceladas</b></h3>
 </div>
         <table class = "table table-bordered table-table-hover">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Status Geral</th>
-            <th>Temporada</th>
-            <th>Episodio</th>
-            <th>Proximo Episodio</th>
+            <th><h4><b>Nome</b></h4></th>
+            <th><h4><b>Status Geral</b></h4></th>
+            <th><h4><b>Temporada</b></h4></th>
+            <th><h4><b>Episodio</b></h4></th>
+            <th><h4><b>Proximo Episodio</b></h4></th>
         </tr>
     </thead>
     <tbody>
@@ -45,7 +45,7 @@
         <% @generals.each do |general| %>
         <% if (general.status == "cancelled") %>
         <tr>
-            <td><%= general.name %></td>
+            <td><b><%= general.name %></b></td>
             <td><%= general.status %></td>  
             <td><%= general.season %></td>
             <td><%= general.episode %></td>
@@ -57,17 +57,17 @@
 </div>
 </table>
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Finalizadas</h4>
+<div class="box2", style="font-color: black">
+    <h3><b>Finalizadas</b></h3>
 </div>
         <table class = "table table-bordered table-table-hover">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Status Geral</th>
-            <th>Temporada</th>
-            <th>Episodio</th>
-            <th>Proximo Episodio</th>
+            <th><h4><b>Nome</b></h4></th>
+            <th><h4><b>Status Geral</b></h4></th>
+            <th><h4><b>Temporada</b></h4></th>
+            <th><h4><b>Episodio</b></h4></th>
+            <th><h4><b>Proximo Episodio</b></h4></th>
         </tr>
     </thead>
     <tbody>
@@ -75,7 +75,7 @@
         <% @generals.each do |general| %>
         <% if (general.status == "done") %>
         <tr>
-            <td><%= general.name %></td>
+            <td><b><%= general.name %></b></td>
             <td><%= general.status_name %></td>  
             <td><%= general.season %></td>
             <td><%= general.episode %></td>

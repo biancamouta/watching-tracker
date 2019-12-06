@@ -7,28 +7,34 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </head>
 
   <body>
-    <strong>
-      <nav class="navbar navbar-dark bg-dark">
-      <%= nav_bar brand: "Series Tracker", brand_link: root_url do%>
+      <%= nav_bar brand: "Series Tracker",  brand_link: root_url do%>
         <%= menu_group do %>
           <%=menu_item "Cadastrar nova Série", new_general_path%>
-          <%=menu_item "Por Status", status_general_path%>
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Por Status <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Em andamento</a></li>
+              <li><a href="#">Canceladas</a></li>
+              <li><a href="#">Finalizadas</a></li>
+              <li><a href="/generals/status">Todas</a></li>                        
+            </ul>
+          </li>
         <% end %>
-    </strong>
-    <%= form_tag search_general_path, method: :get, class:"navbar-form navbar-right" do %>
+            <%= form_tag search_general_path, method: :get, class:"navbar-form navbar-right" do %>
       <div class="form-group">
           <%= text_field_tag :nome, @name, class: "form-control" %>
           <%= button_to "Search", nil, class:"betn betn-default"%>
       </div>
     <% end %>
-
     <%end%>
-    </nav>
+
     <div class="container">
        <%= yield %>
     </div>
+    
   </body>
 </html>

@@ -4,19 +4,14 @@ class General < ApplicationRecord
     validates :status, presence: true
 
     def status_name 
+
         if status=="in_progress"
             "Em Andamento"
-        end
-
-        if status=="done"
+        elsif status=="done"
             "Finalizada"
-        end
-
-        if status=="cancelled"
+        elsif status=="cancelled"
             "Cancelada"
         end
 
     end
-
-
 end
