@@ -1,8 +1,7 @@
-
 <div class="box2", style="font-color: black">
-    <h3><b>Done</b></h3>
+    <h3><b>Waiting</b></h3>
 </div>
-        <table class = "table table-striped">
+        <table class = "table table-bordered table-table-hover">
     <thead>
         <tr>
             <th><h4><b>Name</b></h4></th>
@@ -15,10 +14,11 @@
     <tbody>
  
         <% @generals.each do |general| %>
-        <% if (general.status == "done") %>
+        <% if (general.status == "waiting") %>
         <tr>
             <td><b><%= general.name %></b></td>
-            <td><%= general.status_name %></td>  
+            <td><%= general.my_list %></td>
+            <td><%= general.status %></td>  
             <td><%= general.season %></td>
             <td><%= general.episode %></td>
             <td><%= general.next_episode_at %></td>

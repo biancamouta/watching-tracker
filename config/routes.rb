@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "generals/in_progress", to: "generals#in_progress", as: :in_progress_general
   get "generals/done", to: "generals#done", as: :done_general
   get "generals/cancelled", to: "generals#cancelled", as: :cancelled_general
+  get "generals/waiting", to: "generals#waiting", as: :waiting_general
   get "generals/search", to: "generals#search", as: :search_general
   resources :generals, only: [:new, :create, :destroy, :edit, :update]
   root to: "generals#index"

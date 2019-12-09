@@ -5,12 +5,13 @@ class GeneralsController < ApplicationController
 
     def status_name 
         if status=="cancelled"
-            "Cancelada"
+            "Cancelled"
         elsif status=="in_progress"
-            "Em Andamento"
-        else status=="done"
-            "Finalizada"
-
+            "Im Progress"
+        elsif status=="done"
+            "Done"
+        else status=="waiting"
+            "Waiting"
         end
     end 
 
@@ -37,8 +38,10 @@ class GeneralsController < ApplicationController
     end
 
     def destroy
+        @general.general_lists.each do |general_list|
+            general_list.destroy
+        end
         @general.destroy
-        format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
         redirect_to root_url
     end
 
@@ -63,6 +66,11 @@ class GeneralsController < ApplicationController
     end
 
     def done
+        @generals = General.order :name
+        @status = params[:status]
+    end
+
+    def waiting
         @generals = General.order :name
         @status = params[:status]
     end

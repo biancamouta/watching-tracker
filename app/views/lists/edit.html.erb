@@ -1,6 +1,8 @@
 <h1>Editing List</h1>
 
-<%= render 'form', list: @list %>
 
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>
+<td><%= render 'form', list: @list, locals: {action_name: "Edit"} %></td>
+<br>
+
+<td><%= link_to 'Show', @list, class: "btn btn-default btn-sm" %></td>
+<td><%= link_to 'Back', lists_path, class: "btn btn-default btn-sm" %></td>

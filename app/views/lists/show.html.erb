@@ -1,15 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nome:</strong>
-  <%= @list.nome %>
+  <h3><strong><%=@list.nome%></strong></h3>
+  <br>
 </p>
 
-<%@list.generals.each do |general| %>
-  <%=general.name%>
-<%end%>
+<table>
+  <tbody>
+    <% @list.generals.each do |general| %>
+      <tr>
+        <td><%= general.name %></td>
+        <td><%= link_to 'Edit', edit_list_path(@list), class: "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
-
+<%= link_to 'Back', lists_path , class: "btn btn-default"%>
 

@@ -1,5 +1,5 @@
 <h3>New List</h3>
 
-<%= render 'form', list: @list %>
+<td><%= render partial: 'form', list: @list, locals: {action_text: "Create"}%></td>
 
-<%= link_to 'Back', lists_path %>
+<td><%= link_to 'Back', lists_path , class: "btn btn-default btn-sm"%></td>

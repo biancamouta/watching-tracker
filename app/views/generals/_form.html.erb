@@ -16,10 +16,10 @@
     </div>
     
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-2">
             <div class="form-group">
                 <h4><%= form.label :status %></h4>
-                <%= form.select :status, [['In Progress', "in_progress"], ['Finished', "done"], ['Cancelled', "cancelled"]]%>
+                <h4><%= form.select :status, [['In Progress', "in_progress"], ['Finished', "done"], ['Cancelled', "cancelled"], ['Waiting', "waiting"]]%></h4>
             </div>
         </div>
     </div>
@@ -50,6 +50,7 @@
             </div>
         </div>
     </div>
+
 
     <%= form.submit action_text, class:"btn btn-secondary btn-md" %>
 </div>

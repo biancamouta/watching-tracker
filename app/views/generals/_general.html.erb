@@ -1,12 +1,12 @@
 <tr>
-    <td><%= general.name %></td>
-    <td><%= general.status_name %></td>
-    <td><%= general.season %></td>
-    <td><%= general.episode %></td>
-    <td><%= general.next_episode_at %></td>
+    <td><h5><%= general.name %></h5></td>
+    <td><h5><%= general.status_name %></h5></td>
+    <td><h5><%= general.season %></h5></td>
+    <td><h5><%= general.episode %></h5></td>
+    <td><h5><%= general.next_episode_at %></h5></td>
     <td>
           <div class="dropdown">
-          <a class="btn btn-primary" data-toggle="dropdown" href="#"> Adicionar a Lista <span class="caret"></span></a>
+          <a class="btn btn-primary" data-toggle="dropdown" href="#"> Add to List <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <%List.all.each do |list| %>
                     <li><a href="#" onclick="return addToList(<%=general.id%>, <%=list.id%>)"><%=list.nome%></a></li>

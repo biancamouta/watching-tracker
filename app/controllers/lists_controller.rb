@@ -54,6 +54,10 @@ class ListsController < ApplicationController
   # DELETE /lists/1
   # DELETE /lists/1.json
   def destroy
+
+    @list.general_lists.each do |general_list|
+      general_list.destroy
+    end
     @list.destroy
     respond_to do |format|
       format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }

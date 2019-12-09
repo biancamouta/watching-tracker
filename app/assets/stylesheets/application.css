@@ -34,18 +34,39 @@ h3 {
   color: black;
 }
 
-
 .container {
   width: 95%;
-  background-color: darkgray;
 }
 
-.container_form {
-  width: 50%;
+.container-form {
   background-color: darkgray;
+
 }
 
 .box2 {
   display: inline-block;
   width: 100%;
+  margin-bottom: 40px;
+}
+
+.box3 {
+  background-color: black;
+}
+
+.button{
+  padding: 10px;
+}
+
+img {
+  display: block;
+  width: 95%;
+  height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+
+}
+
+table {
+  border: aquamarine;
 }

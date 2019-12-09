@@ -1,10 +1,10 @@
-<%= form_with(model: list, local: true) do |form| %>
-  <% if list.errors.any? %>
+<%= form_with(model: @list, local: true) do |form| %>
+  <% if @list.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
 
       <ul>
-        <% list.errors.full_messages.each do |message| %>
+        <% @list.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -15,12 +15,12 @@
         <div class="col-sm-6"> 
             <div class="form-group">
                 <h4><%= form.label :nome %></h4>
-                <%= form.text_field :name, class:"form-control" %>
+                <%= form.text_field :nome, class:"form-control" %>
             </div>
         </div>
     </div>
 
   <div class="actions">
-    <%= form.submit "Criar Nova Lista", class:"btn btn-secondary btn-md" %>
+    <%= form.submit action_name, class:"btn btn-secondary btn-md" %>
   </div>
 <% end %>
