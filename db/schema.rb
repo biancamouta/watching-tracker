@@ -10,16 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_135319) do
+ActiveRecord::Schema.define(version: 2019_12_06_182623) do
+
+  create_table "general_lists", force: :cascade do |t|
+    t.integer "general_id", null: false
+    t.integer "list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["general_id"], name: "index_general_lists_on_general_id"
+    t.index ["list_id"], name: "index_general_lists_on_list_id"
+  end
 
   create_table "generals", force: :cascade do |t|
     t.string "name"
-    t.bool "status"
+    t.string "status"
     t.integer "season"
     t.integer "episode"
     t.date "next_episode_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "my_list"
   end
 
+  create_table "lists", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "general_lists", "generals"
+  add_foreign_key "general_lists", "lists"
 end

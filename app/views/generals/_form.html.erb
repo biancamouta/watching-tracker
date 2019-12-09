@@ -9,17 +9,17 @@
     <div class="row">
         <div class="col-sm-6"> 
             <div class="form-group">
-                <h4><%= form.label :name%></h4>
+                <h4><%= form.label :name %></h4>
                 <%= form.text_field :name, class:"form-control" %>
             </div>
         </div>
     </div>
-
+    
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
                 <h4><%= form.label :status %></h4>
-                <%= form.select :status, [['Em andamento', "in_progress"], ['Finalizada', "done"], ['Cancelada', "cancelled"]]%>
+                <%= form.select :status, [['In Progress', "in_progress"], ['Finished', "done"], ['Cancelled', "cancelled"]]%>
             </div>
         </div>
     </div>
@@ -54,3 +54,5 @@
     <%= form.submit action_text, class:"btn btn-secondary btn-md" %>
 </div>
 <% end %>
+
+

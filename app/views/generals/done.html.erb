@@ -1,0 +1,30 @@
+
+<div class="box2", style="font-color: black">
+    <h3><b>Finalizadas</b></h3>
+</div>
+        <table class = "table table-bordered table-table-hover">
+    <thead>
+        <tr>
+            <th><h4><b>Nome</b></h4></th>
+            <th><h4><b>Status Geral</b></h4></th>
+            <th><h4><b>Temporada</b></h4></th>
+            <th><h4><b>Episodio</b></h4></th>
+            <th><h4><b>Proximo Episodio</b></h4></th>
+        </tr>
+    </thead>
+    <tbody>
+ 
+        <% @generals.each do |general| %>
+        <% if (general.status == "done") %>
+        <tr>
+            <td><b><%= general.name %></b></td>
+            <td><%= general.status_name %></td>  
+            <td><%= general.season %></td>
+            <td><%= general.episode %></td>
+            <td><%= general.next_episode_at %></td>
+        </tr>
+        <% end %>
+    <% end %>
+    </tbody>
+</div>
+</table>

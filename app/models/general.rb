@@ -12,6 +12,8 @@ class General < ApplicationRecord
         elsif status=="cancelled"
             "Cancelada"
         end
-
     end
+
+    
+
 end

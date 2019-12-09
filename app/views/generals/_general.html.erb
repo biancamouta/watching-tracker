@@ -4,6 +4,16 @@
     <td><%= general.season %></td>
     <td><%= general.episode %></td>
     <td><%= general.next_episode_at %></td>
+    <td>
+          <div class="dropdown">
+          <a class="btn btn-primary" data-toggle="dropdown" href="#"> Adicionar a Lista <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <%List.all.each do |list| %>
+                    <li><a href="#" onclick="return addToList(<%=general.id%>, <%=list.id%>)"><%=list.nome%></a></li>
+                <%end%>                      
+            </ul>
+          </div>
+    </td>
     <td><%= link_to "Alterar", edit_general_path(general), class: "btn btn-default" %></td>
     <td><%= button_to "Remover", general, method: :delete, class: "btn btn-danger", data: {confirm: "Are You Sure?"}%></td>
 </tr>

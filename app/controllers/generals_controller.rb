@@ -38,6 +38,7 @@ class GeneralsController < ApplicationController
 
     def destroy
         @general.destroy
+        format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
         redirect_to root_url
     end
 
@@ -47,6 +48,21 @@ class GeneralsController < ApplicationController
     end
 
     def status
+        @generals = General.order :name
+        @status = params[:status]
+    end
+
+    def in_progress
+        @generals = General.order :name
+        @status = params[:status]
+    end
+
+    def cancelled
+        @generals = General.order :name
+        @status = params[:status]
+    end
+
+    def done
         @generals = General.order :name
         @status = params[:status]
     end
@@ -70,5 +86,9 @@ class GeneralsController < ApplicationController
         @general = General.find (params[:id])
     end
 
+    def my_list
+        @generals = General.order :name
+        @my_list = params[:my_list]
+    end
 
 end
